@@ -14,6 +14,7 @@ const pgClient = {
   host: process.env.HOST,
   port: process.env.PORT
 }
+console.log('PostgreSQL Client:', pgClient)
 
 const bgClient = new BusgresClient(sbConnectionString, sbConfig, pgClient)
 
