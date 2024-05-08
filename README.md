@@ -1,2 +1,2 @@
 # busgres-demo
-Demo project to test functionality of Busgres.
+Demo project to test functionality of Busgres NPM package.
