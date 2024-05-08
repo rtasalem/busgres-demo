@@ -8,14 +8,14 @@ const sbConfig = {
   subscription: process.env.SUBSCRIPTION
 }
 
-const pgConfig = {
+const pgClient = {
   user: process.env.USERNAME,
   database: process.env.DATABASE,
   host: process.env.HOST,
   port: process.env.PORT
 }
 
-const bgClient = new BusgresClient(sbConnectionString, sbConfig, pgConfig)
+const bgClient = new BusgresClient(sbConnectionString, sbConfig, pgClient)
 
 bgClient
   .connect()
