@@ -20,7 +20,9 @@ const bgClient = new BusgresClient(sbConnectionString, sbConfig, pgClient)
 bgClient
   .connect()
   .then(async () => {
-    console.log(`You are now connected to the ${process.env.DATABASE} database in PostgreSQL.`)
+    console.log(
+      `You are now connected to the ${process.env.DATABASE} database in PostgreSQL.`
+    )
 
     const query = 'select * from busgres'
     const result = await bgClient.pgClient.query(query)
@@ -31,5 +33,7 @@ bgClient
     })
   })
   .catch((error) => {
-    console.error('There has been an error connecting to your PostgreSQL database:', error)
+    console.error(
+      `There has been an error connecting to your PostgreSQL database: ${error}`
+    )
   })
