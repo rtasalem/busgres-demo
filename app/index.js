@@ -2,11 +2,10 @@ const { BusgresClient } = require('busgres')
 require('dotenv').config()
 
 const sbConnectionString = process.env.CONNECTION_STRING
+console.log('Service Bus Connection String:', sbConnectionString)
 
-const sbConfig = {
-  topic: process.env.TOPIC,
-  subscription: process.env.SUBSCRIPTION
-}
+const sbConfig = process.env.QUEUE
+console.log('Service Bus Config:', sbConfig)
 
 const pgClient = {
   user: process.env.USERNAME,
@@ -16,7 +15,7 @@ const pgClient = {
 }
 console.log('PostgreSQL Client:', pgClient)
 
-const bgClient = new BusgresClient(sbConnectionString, sbConfig, pgClient)
+const bgClient = new BusgresClient(sbConnectionString, sbConfig, pgClient) 
 
 bgClient
   .connect()
@@ -38,3 +37,7 @@ bgClient
       `There has been an error connecting to your PostgreSQL database: ${error}`
     )
   })
+
+bgClient.receiveMessage().then((message) => {
+  console.log('Received message:', message)
+})

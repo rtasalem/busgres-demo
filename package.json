@@ -9,7 +9,7 @@
   "author": "Rana Salem github.com/rtasalem",
   "license": "ISC",
   "dependencies": {
-    "busgres": "^1.0.6",
+    "busgres": "^1.0.11",
     "dotenv": "^16.4.5"
   },
   "devDependencies": {
