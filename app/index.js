@@ -15,7 +15,10 @@ const pgClient = {
 }
 console.log('PostgreSQL Client:', pgClient)
 
-const bgClient = new BusgresClient(sbConnectionString, sbConfig, pgClient) 
+const bgClient = new BusgresClient(sbConnectionString, sbConfig, pgClient)
+
+const tableName = 'busgres'
+const columnNames = ['message']
 
 bgClient
   .connect()
@@ -38,6 +41,4 @@ bgClient
     )
   })
 
-bgClient.receiveMessage().then((message) => {
-  console.log('Received message:', message)
-})
+bgClient.receiveMessage(tableName, columnNames)
