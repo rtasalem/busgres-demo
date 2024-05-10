@@ -1,0 +1,18 @@
+{
+  "name": "busgres-demo",
+  "version": "1.0.0",
+  "description": "Demo project used to test busgres NPM package.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rana Salem github.com/rtasalem",
+  "license": "ISC",
+  "dependencies": {
+    "busgres": "^1.0.18",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
