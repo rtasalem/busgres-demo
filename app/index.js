@@ -4,8 +4,8 @@ require('dotenv').config()
 const sbConnectionString = process.env.CONNECTION_STRING
 console.log('Service Bus Connection String:', sbConnectionString)
 
-const sbConfig = process.env.QUEUE
-console.log('Service Bus Config:', sbConfig)
+const sbEntity = process.env.QUEUE
+console.log('Service Bus Entity (queue):', sbEntity)
 
 const pgClient = {
   user: process.env.USERNAME,
@@ -15,10 +15,7 @@ const pgClient = {
 }
 console.log('PostgreSQL Client:', pgClient)
 
-const bgClient = new BusgresClient(sbConnectionString, sbConfig, pgClient)
-
-const tableName = 'busgres'
-const columnNames = ['message']
+const bgClient = new BusgresClient(sbConnectionString, sbEntity, pgClient)
 
 bgClient
   .connect()
@@ -29,8 +26,8 @@ bgClient
 
     const query = 'select * from busgres'
     const result = await bgClient.pgClient.query(query)
-
     console.log('All messages in the database:')
+
     result.rows.forEach((row, index) => {
       console.log(`Row ${index + 1}:`, row)
     })
@@ -40,5 +37,8 @@ bgClient
       `There has been an error connecting to your PostgreSQL database: ${error}`
     )
   })
+
+const tableName = 'busgres'
+const columnNames = ['message']
 
 bgClient.receiveMessage(tableName, columnNames)

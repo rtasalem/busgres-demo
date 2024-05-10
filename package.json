@@ -6,10 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Rana Salem github.com/rtasalem",
+  "author": "Rana Salem (github.com/rtasalem)",
   "license": "ISC",
   "dependencies": {
-    "busgres": "^1.0.18",
+    "busgres": "^2.0.2",
     "dotenv": "^16.4.5"
   },
   "devDependencies": {
