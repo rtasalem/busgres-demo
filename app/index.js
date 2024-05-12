@@ -1,21 +1,6 @@
-const { BusgresClient } = require('busgres')
+const bgClient = require('./busgres-client')
+const { tableName, columnNames } = require('./table-column-names')
 require('dotenv').config()
-
-const sbConnectionString = process.env.CONNECTION_STRING
-console.log('Service Bus Connection String:', sbConnectionString)
-
-const sbEntity = process.env.QUEUE
-console.log('Service Bus Entity (queue):', sbEntity)
-
-const pgClient = {
-  user: process.env.USERNAME,
-  database: process.env.DATABASE,
-  host: process.env.HOST,
-  port: process.env.PORT
-}
-console.log('PostgreSQL Client:', pgClient)
-
-const bgClient = new BusgresClient(sbConnectionString, sbEntity, pgClient)
 
 bgClient
   .connect()
@@ -37,8 +22,5 @@ bgClient
       `There has been an error connecting to your PostgreSQL database: ${error}`
     )
   })
-
-const tableName = 'busgres'
-const columnNames = ['message']
 
 bgClient.receiveMessage(tableName, columnNames)
