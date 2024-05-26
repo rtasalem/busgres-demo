@@ -16,7 +16,12 @@ Full details on how this project was set up to utilise the Busgres package is av
 
 | Variable | Description |
 | -------- | ----------- |
-|
+| `SB_CONNECTION_STRING` | Service Bus namespace connection string. |
+| `SB_QUEUE` | Name of Service Bus queue. |
+| `PG_USERNAME` | Username of PostgreSQL database. |
+| `PG_DATABASE` | Name of PostgreSQL database. |
+| `PG_HOST` | Host of PostgreSQL server. |
+| `PG_PORT` | Port of PostgreSQL server. |
 
 ## Getting Started
 
