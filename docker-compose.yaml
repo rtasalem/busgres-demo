@@ -1,0 +1,17 @@
+services:
+  busgres-demo:
+    build: .
+    image: busgres-demo:1.0.0
+    container_name: busgres-demo
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./app:/home/node/app
+      - ./package.json:/home/node/package.json
+    environment:
+      CONNECTION_STRING: "${CONNECTION_STRING}"
+      QUEUE: "${QUEUE}"
+      USERNAME: "${USERNAME}"
+      DATABASE: "${DATABASE}"
+      HOST: ${HOST}
+      PORT: "${PORT}"

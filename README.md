@@ -12,6 +12,12 @@ Full details on how this project was set up to utilise the Busgres package is av
 - Azure Service Bus queue
 - PostgreSQL server
 
+## Environment Variables
+
+| Variable | Description |
+| -------- | ----------- |
+|
+
 ## Getting Started
 
 Once the PostgreSQL database and table has been set up, run the following command to start up the project:
