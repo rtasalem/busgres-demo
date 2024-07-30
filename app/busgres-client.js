@@ -4,8 +4,12 @@ require('dotenv').config()
 const sbConnectionString = process.env.SB_CONNECTION_STRING
 console.log('Service Bus Connection String:', sbConnectionString)
 
-const sbEntity = process.env.SB_QUEUE
-console.log('Service Bus Entity (queue):', sbEntity)
+const sbEntityName = process.env.SB_TOPIC
+console.log('Service Bus Entity (i.e. queue or topic name):', sbEntityName)
+
+const sbEntitySubscription = process.env.SB_SUBSCRIPTION
+
+const sbEntityType = 'topic'
 
 const pgClient = {
   user: process.env.PG_USERNAME,
@@ -15,6 +19,6 @@ const pgClient = {
 }
 console.log('PostgreSQL Client:', pgClient)
 
-const bgClient = new BusgresClient(sbConnectionString, sbEntity, pgClient)
+const bgClient = new BusgresClient(sbConnectionString, sbEntityName, sbEntityType, sbEntitySubscription, pgClient)
 
 module.exports = bgClient
