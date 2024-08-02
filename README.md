@@ -1,6 +1,6 @@
 # Busgres Demo
 
-This is a demo project to test the functionality of the [Busgres](https://www.npmjs.com/package/busgres) NPM package I created which saves messages sent and received from an Azure Service Bus queue into a PostgreSQL database.
+This is a demo project to test the functionality of the [Busgres](https://www.npmjs.com/package/busgres) NPM package I created which saves messages sent and received from an Azure Service Bus topic into a PostgreSQL database.
 
 ## Documentation
 
