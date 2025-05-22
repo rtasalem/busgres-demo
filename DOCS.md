@@ -2,10 +2,10 @@
 
 ## Contents
 
-1. [PostgreSQL Server Set-up](https://github.com/rtasalem/busgres-demo/blob/main/DOCS.md#postgresql-server-set-up)
-2. [Azure Service Bus](https://github.com/rtasalem/busgres-demo/blob/main/DOCS.md#azure-service-bus)
-3. [Utilising Busgres](https://github.com/rtasalem/busgres-demo/blob/main/DOCS.md#utilising-busgres)
-4. [Environment Variables](https://github.com/rtasalem/busgres-demo/blob/main/DOCS.md#environment-variables)
+1. [PostgreSQL Server Set-up](#postgresql-server-set-up)
+2. [Azure Service Bus](#azure-service-bus)
+3. [Utilising Busgres](#utilising-busgres)
+4. [Environment Variables](#environment-variables)
 
 ## PostgreSQL Server Set-up
 
