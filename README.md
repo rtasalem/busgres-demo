@@ -28,5 +28,5 @@ Full details on how this project was set up to utilise the Busgres package is av
 Once the PostgreSQL database and table has been set up, run the following command to start up the project:
 
 ```
-nodemon app
+npm run dev
 ```
