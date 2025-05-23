@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "Demo project used to test busgres NPM package.",
   "main": "app/index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon app/index.js"
   },
   "author": "Rana Salem (github.com/rtasalem)",
   "license": "ISC",
   "dependencies": {
-    "busgres": "^3.1.0-alpha.1748029684",
-    "convict": "^6.2.4",
-    "convict-format-with-validator": "^6.2.0",
+    "busgres": "^3.1.0-alpha.1748034852",
     "dotenv": "^16.4.5"
   },
   "devDependencies": {
