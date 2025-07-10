@@ -9,8 +9,8 @@ Full details on how this project was set up to utilise the Busgres package is av
 ## Prerequisites
 
 - Azure Service Bus Namespace connection string
-- Azure Service Bus queue
-- PostgreSQL server
+- Azure Service Bus queue or topic & subscription
+- PostgreSQL server & database
 
 ## Environment Variables
 
