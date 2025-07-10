@@ -1,26 +1,9 @@
-const bgClient = require('./busgres-client')
-const { tableName, columnNames } = require('./table-column-names')
-require('dotenv').config()
+import { busgresClient } from './busgres-client.js'
+import { tableName, columnNames } from './constants.js'
 
-bgClient
-  .connect()
-  .then(async () => {
-    console.log(
-      `You are now connected to the ${process.env.DATABASE} database in PostgreSQL.`
-    )
+await busgresClient.start(tableName, columnNames)
 
-    const query = 'select * from busgres'
-    const result = await bgClient.pgClient.query(query)
-    console.log('All messages in the database:')
-
-    result.rows.forEach((row, index) => {
-      console.log(`Row ${index + 1}:`, row)
-    })
-  })
-  .catch((error) => {
-    console.error(
-      `There has been an error connecting to your PostgreSQL database: ${error}`
-    )
-  })
-
-bgClient.receiveMessage(tableName, columnNames)
+process.on('SIGINT', async () => {
+  await busgresClient.stop()
+  process.exit()
+})
